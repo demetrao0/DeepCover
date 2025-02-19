@@ -214,7 +214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 44244176}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Rampa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 352072526}
   - component: {fileID: 352072525}
   - component: {fileID: 352072524}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cilindro (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -741,7 +741,7 @@ GameObject:
   - component: {fileID: 672458079}
   - component: {fileID: 672458078}
   - component: {fileID: 672458077}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Rampa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -898,7 +898,7 @@ GameObject:
   - component: {fileID: 862317813}
   - component: {fileID: 862317812}
   - component: {fileID: 862317811}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1006,7 +1006,7 @@ GameObject:
   - component: {fileID: 1003000526}
   - component: {fileID: 1003000525}
   - component: {fileID: 1003000524}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1114,7 +1114,7 @@ GameObject:
   - component: {fileID: 1017292859}
   - component: {fileID: 1017292858}
   - component: {fileID: 1017292857}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1219,7 +1219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1037452250}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Escalera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1257,7 +1257,7 @@ GameObject:
   - component: {fileID: 1154483042}
   - component: {fileID: 1154483041}
   - component: {fileID: 1154483040}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Piso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1363,6 +1363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1193780515}
   - component: {fileID: 1193780516}
+  - component: {fileID: 1193780517}
   m_Layer: 0
   m_Name: Personaje
   m_TagString: Untagged
@@ -1385,6 +1386,7 @@ Transform:
   m_Children:
   - {fileID: 39703725}
   - {fileID: 323490603}
+  - {fileID: 1888998089}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &1193780516
@@ -1412,6 +1414,27 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1193780517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193780514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aae96c9aa26aae4b9f3e26833311d84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterController: {fileID: 1193780516}
+  speed: 10
+  gravity: -9.81
+  groundCheck: {fileID: 1888998089}
+  sphereRadius: 0.3
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 8
+  isGraunded: 0
 --- !u!1 &1207192697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,7 +1447,7 @@ GameObject:
   - component: {fileID: 1207192700}
   - component: {fileID: 1207192699}
   - component: {fileID: 1207192698}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cilindro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1534,7 +1557,7 @@ GameObject:
   - component: {fileID: 1220892644}
   - component: {fileID: 1220892643}
   - component: {fileID: 1220892642}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1642,7 +1665,7 @@ GameObject:
   - component: {fileID: 1563125370}
   - component: {fileID: 1563125369}
   - component: {fileID: 1563125368}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cilindro (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1752,7 +1775,7 @@ GameObject:
   - component: {fileID: 1580897874}
   - component: {fileID: 1580897873}
   - component: {fileID: 1580897872}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1848,6 +1871,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580897870}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1888998088
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1888998089}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1888998089
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888998088}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.987, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1193780515}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
