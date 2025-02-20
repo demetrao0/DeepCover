@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PhoneInt : MonoBehaviour
+public class PalancaScript : MonoBehaviour
 {
     LayerMask mask;
     public float distance = 1.5f;
@@ -8,12 +8,7 @@ public class PhoneInt : MonoBehaviour
     
     public GameObject TextoDetect;
     GameObject ultimoReconocido = null;
-
-
-    public Texture main;
-    public Texture activ;
-
-
+    
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,11 +31,11 @@ public class PhoneInt : MonoBehaviour
         {
             Deselect();
             SelectedObject(hit.transform);
-            if (hit.collider.tag == "Telefono")
+            if (hit.collider.tag == "Palanca")
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    hit.collider.transform.GetComponent<InteractivePhone>().ActivarObjeto();
+                    hit.collider.transform.GetComponent<PalancaInteractive>().ActivarObjeto();
                 }
             }
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * distance, Color.red);
@@ -59,7 +54,7 @@ public class PhoneInt : MonoBehaviour
 
     void SelectedObject(Transform transform)
     {
-        transform.GetComponent<MeshRenderer>().material.mainTexture = activ;
+       
         ultimoReconocido = transform.gameObject;
     }
 
@@ -68,7 +63,7 @@ public class PhoneInt : MonoBehaviour
     {
         if (ultimoReconocido)
         {
-            ultimoReconocido.GetComponent<Renderer>().material.mainTexture = main;
+            
             ultimoReconocido = null;
 
         }
@@ -76,8 +71,7 @@ public class PhoneInt : MonoBehaviour
 
     private void OnGUI()
     {
-        //Rect rect = new Rect(Screen.width / 2, Screen.height / 2, puntero.width, puntero.height);
-        //GUI.DrawTexture(rect, puntero);
+        
 
         if (ultimoReconocido)
         {
