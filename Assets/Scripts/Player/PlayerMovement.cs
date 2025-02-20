@@ -4,6 +4,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
+    
+
+
+
     public CharacterController characterController;
     public float speed = 10f;
 
@@ -46,4 +50,6 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
+
+   
 }
