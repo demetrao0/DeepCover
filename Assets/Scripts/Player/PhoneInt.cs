@@ -29,7 +29,7 @@ public class PhoneInt : MonoBehaviour
         RaycastHit hit;
 
 
-
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * distance, Color.yellow);
 
 
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, distance, mask))
@@ -43,7 +43,7 @@ public class PhoneInt : MonoBehaviour
                     hit.collider.transform.GetComponent<InteractivePhone>().ActivarObjeto();
                 }
             }
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * distance, Color.red);
+            //Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * distance, Color.red);
 
         }
         else
