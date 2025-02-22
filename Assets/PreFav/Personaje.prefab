@@ -104,6 +104,9 @@ GameObject:
   - component: {fileID: 1051602144232595779}
   - component: {fileID: 3262308749816587901}
   - component: {fileID: 5738311908153194907}
+  - component: {fileID: 1081725458657683772}
+  - component: {fileID: 8838849922588782049}
+  - component: {fileID: 7956840261236753796}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -320,6 +323,56 @@ MonoBehaviour:
     m_Bits: 0
   distance: 1.7
   TextoDetect: {fileID: 0}
+--- !u!114 &1081725458657683772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486603614327282580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac7bcf8df22fe9c44b581cd712410af5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
+  distance: 2
+  Textodetect: {fileID: 0}
+  playerVictory: {fileID: 0}
+--- !u!114 &8838849922588782049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486603614327282580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ae3c43b521a854ca0f784ad9880f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 5
+  TextoDetect: {fileID: 0}
+--- !u!114 &7956840261236753796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486603614327282580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0438c5bd5776cc489453f208ff335d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
+  distance: 5
+  Textodetect: {fileID: 0}
+  playerVictory: {fileID: 0}
 --- !u!1 &2196061340386508378
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,6 +471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Aliens: 0
   llaveCaja: 0
+  llaveBoton: 0
 --- !u!1 &2917102957996793120
 GameObject:
   m_ObjectHideFlags: 0

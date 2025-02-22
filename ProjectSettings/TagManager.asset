@@ -11,6 +11,9 @@ TagManager:
   - Lays
   - DropZone
   - Virus
+  - Caja
+  - LlaveBoton
+  - Boton
   layers:
   - Default
   - TransparentFX
