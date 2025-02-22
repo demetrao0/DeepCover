@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IdButtons : MonoBehaviour
 {
@@ -20,8 +21,8 @@ public class IdButtons : MonoBehaviour
     public GameObject monoCafe;
     public GameObject monoNaranja;
 
-
-    
+    public string continuar;
+    public string gameOver;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -112,6 +113,22 @@ public class IdButtons : MonoBehaviour
         monoCafe.SetActive(false);
         monoNaranja.SetActive(true);
     }
+
+
+    public void Continuar()
+    {
+        if (monoNaranja.activeSelf)
+        {
+            SceneManager.LoadScene(continuar);
+        }
+        else
+        {
+            SceneManager.LoadScene(gameOver);
+        }
+
+
+    }
+
 
     // Update is called once per frame
     void Update()

@@ -6,7 +6,7 @@ public class Victory : MonoBehaviour
 
 
     public bool Aliens = false;
-    
+    public bool llaveCaja = false;
     
     
     
@@ -29,6 +29,12 @@ public class Victory : MonoBehaviour
     public void AliensLibres()
     {
         Aliens = true;
+    }
+
+
+    public void Llave()
+    {
+        llaveCaja = true;
     }
 
 
