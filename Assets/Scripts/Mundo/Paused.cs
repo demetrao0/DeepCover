@@ -17,7 +17,8 @@ public class Paused : MonoBehaviour
         
         if (numero == 0 && Input.GetKeyDown(KeyCode.Escape))
         {
-
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             Time.timeScale = 0f;
             paused.SetActive(true);
             numero = 100f;
@@ -25,7 +26,8 @@ public class Paused : MonoBehaviour
         }
         if (numero == 100f && Input.GetKeyDown(KeyCode.Return))
         {
-
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             paused.SetActive(false);
 
             numero = 0f;

@@ -8,8 +8,9 @@ public class Victory : MonoBehaviour
     public bool Aliens = false;
     public bool llaveCaja = false;
     public bool llaveBoton = false;
-    
-    
+    public bool virus = false;
+
+    public float victory = 0f;
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,6 +30,7 @@ public class Victory : MonoBehaviour
     public void AliensLibres()
     {
         Aliens = true;
+        victory = victory + 100f;
     }
 
 
@@ -40,6 +42,14 @@ public class Victory : MonoBehaviour
     public void LlaveBoton()
     {
         llaveBoton = true;
+    }
+
+    public void Virus()
+    {
+
+        virus = true;
+        victory = victory + 100f;
+
     }
 
 

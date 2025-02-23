@@ -6,7 +6,13 @@ public class introButton : MonoBehaviour
 
     public string nameScene;
 
-  public void Continuar()
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void Continuar()
     {
         SceneManager.LoadScene(nameScene);
     }

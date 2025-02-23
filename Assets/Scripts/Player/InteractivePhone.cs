@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class InteractivePhone : MonoBehaviour
 {
@@ -14,29 +16,35 @@ public class InteractivePhone : MonoBehaviour
     private int indiceAviso = 0;
     private bool tiempoTerminado = false;
 
-
-
-    //--------------------------------- PREGUNTAS
-
-
+    // Referencias a los objetos de pregunta
     public GameObject pregunta1;
     public GameObject pregunta2;
     public GameObject pregunta3;
     public GameObject pregunta4;
 
-
-
-
-
+    // Referencia al texto en el Canvas para la cuenta regresiva
+    public TextMeshProUGUI textoCuentaRegresiva; // Si usas TextMeshPro
+    //public Text textoCuentaRegresiva; // Si usas el Text Legacy
 
     void Start()
     {
         tiempoRestante = tiempoTotal;
 
+
+
+
+
+        // Inicializar las preguntas y desactivarlas
         pregunta1.SetActive(false);
         pregunta2.SetActive(false);
         pregunta3.SetActive(false);
         pregunta4.SetActive(false);
+
+        // Asegurarse de que el texto de la cuenta regresiva esté vacío al principio
+        if (textoCuentaRegresiva != null)
+        {
+            textoCuentaRegresiva.text = FormatTiempo(tiempoRestante);
+        }
     }
 
     void Update()
@@ -44,6 +52,12 @@ public class InteractivePhone : MonoBehaviour
         if (tiempoRestante > 0)
         {
             tiempoRestante -= Time.deltaTime;
+
+            // Actualizar el texto de la cuenta regresiva
+            if (textoCuentaRegresiva != null)
+            {
+                textoCuentaRegresiva.text = FormatTiempo(tiempoRestante);
+            }
 
             // Comprobamos si hemos llegado al siguiente aviso
             if (indiceAviso < tiemposAviso.Length && tiempoRestante <= tiemposAviso[indiceAviso])
@@ -74,10 +88,12 @@ public class InteractivePhone : MonoBehaviour
         switch (indice)
         {
             case 0:
+                Time.timeScale = 0f;
                 pregunta1.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
                 break;
             case 1:
-                pregunta2.SetActive(true);
+                
                 break;
             case 2:
                 pregunta3.SetActive(true);
@@ -85,7 +101,6 @@ public class InteractivePhone : MonoBehaviour
             case 3:
                 pregunta4.SetActive(true);
                 break;
-           
         }
     }
 
@@ -93,5 +108,13 @@ public class InteractivePhone : MonoBehaviour
     {
         Debug.Log("Tiempo finalizado. Cambiando a la escena: " + escenaDestino);
         SceneManager.LoadScene(escenaDestino);
+    }
+
+    // Formatear el tiempo en minutos y segundos
+    string FormatTiempo(float tiempo)
+    {
+        int minutos = Mathf.FloorToInt(tiempo / 60);
+        int segundos = Mathf.FloorToInt(tiempo % 60);
+        return string.Format("{0:00}:{1:00}", minutos, segundos);
     }
 }
